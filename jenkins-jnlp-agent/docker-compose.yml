@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  jenkins-agent:
+    build: .
+    image: jenkins-slave
+    command: -url http://192.168.99.100:8080/ secret-key-here test-agent
+    volumes:
+      - /usr/local/bin/docker:/bin/docker
+      - /var/run/docker.sock:/var/run/docker.sock
+    volumes_from:
+      - jenkins-data
+
+  jenkins-data:
+      build: ../jenkins-data/.
+      image: jenkins-data
