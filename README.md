@@ -6,6 +6,7 @@ How to build your jenkins environment
 * cd jenkins-master -> docker-compose up -d
 * Enter the secretKey / install plugins / create a admin account
 * CloudBees Docker Pipeline (Issue, needs to be installed manually)
+* First run - docker exec -it <container> cat /var/jenkins_home/secrets/initialAdminPassword (copy and paste the generated password)
 
 ## Build and Run (Jenkins Slave)
 
